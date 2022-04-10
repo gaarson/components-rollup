@@ -1,0 +1,12 @@
+
+.groupbox {
+  display: flex;  
+}
+
+.flag_div {  
+  flex-direction: column;  
+}
+
+.button_div { 
+  flex-direction: row;  
+}

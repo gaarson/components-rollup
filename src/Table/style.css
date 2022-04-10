@@ -1,0 +1,110 @@
+.table {
+    overflow: hidden;
+    /*display: flex;*/
+    flex-flow: column;
+    flex-basis: 0;
+    flex-grow: 1;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.table-header,
+.table-body,
+.table-footer {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.table-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-basis: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+.table table {
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-size: 13px;
+    table-layout: fixed;
+}
+
+.table table tr {
+    border-bottom: solid 1px #d1dde7;
+}
+
+.table table tr:last-child {
+    border-bottom: none;
+}
+
+.table table td,
+.table table th {
+    padding: 7px 10px;
+    word-break: break-word;
+}
+
+.table table td {
+    padding: 10px
+}
+
+.table table th span {
+    cursor: pointer;
+    position: relative;
+}
+
+.table table th span::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    right: -25px;
+}
+
+/*.table table th span:hover::after {*/
+    /*background-image: url("/img/arrows_sort_1_black.svg");*/
+/*}*/
+
+/*.table table th span.asc::after {*/
+    /*background-image: url("/img/arrows_sort_1_black.svg");*/
+/*}*/
+
+/*.table table th span.desc::after {*/
+    /*background-image: url("/img/arrows_sort_2_black.svg");*/
+/*}*/
+
+/*.table table th:last-child span.expanded-all:hover::after {*/
+    /*background-image: url("/img/ic_arrows_close.svg");*/
+/*}*/
+
+/*.table table th:last-child span.wrapped-all:hover::after {*/
+    /*background-image: url("/img/ic_arrows_open.svg");*/
+/*}*/
+
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #90A0B7;
+}
+
+.table-body__loading {
+    pointer-events: none;
+}

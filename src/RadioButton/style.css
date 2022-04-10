@@ -1,0 +1,257 @@
+/*************** radio **************/
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;  
+  height: 28px;
+  line-height: 28px; 
+  text-align: center;
+  vertical-align: middle; 
+}
+
+.span {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/*************** flag checkbox **************/
+
+.flag_span {
+  position: relative;
+  display: flex; 
+  width: 130px;
+  height: 100%; 
+  line-height: 22px;
+  left: 0px;       
+  color:var(--text);  
+}
+
+.flag_span_disable {
+  position: relative;
+  display: flex; 
+  opacity: 0.5;
+  color: var(--disabled-text);  
+}
+
+.span:hover {
+  background: rgba(49, 116, 230, 0.1);
+}
+
+.flag_input {
+  position: relative;
+  display: flex; 
+  cursor: pointer;
+  background-color: var(--white);  
+}
+
+.flag_input:hover {
+  background: var(--checkbox-label-background);
+  border-radius: 2px;
+}
+
+/* прячем стандартный элемент за область видимости */
+.flag_input[type="radio"]:checked, 
+.flag_input[type="radio"]:not(:checked) 
+{
+  position: absolute;
+  opacity: 0;    
+}
+ 
+.flag_input[type="radio"]:checked + span, 
+.flag_input[type="radio"]:not(:checked) + span {
+  position: relative;
+  display: flex;
+  flex-direction: row;  
+  padding-left: 24px;
+  line-height: 22px;
+  cursor: pointer;    
+}
+
+/* стилизованные контейнеры для переключателей */
+.flag_input[type="radio"]:checked + span:before, 
+.flag_input[type="radio"]:not(:checked) + span:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  display: flex;
+  flex-direction: row;     
+  width: 16px;
+  height: 16px;    
+  border: 1px solid var(--checkbox-border-grey);
+  background-color: var(--white);
+  border-radius: 100%;  /* круглый контейнер */  
+}
+
+.flag_input_error[type="radio"]:checked + span:before, 
+.flag_input_error[type="radio"]:not(:checked) + span:before {        
+  border: 1px solid var(--checkbox-orange); /**/    
+}
+
+/* синий border для переключателей в состоянии checked */
+.flag_input[type="radio"]:checked + span:before {
+  border: 1px solid var(--blue);
+}
+
+/* серый border для переключателей в состоянии checked и disabled */
+.flag_input[type="radio"]:checked:disabled + span:before, 
+.flag_input[type="radio"]:disabled + span:before {
+  opacity: 0.5;
+  border: 1px solid var(--checkbox-border-grey);  
+}
+
+/* оранжевый border для переключателей в состоянии checked в статусе isError */
+.flag_input_error[type="radio"]:checked + span:before {
+  border: 1px solid var(--checkbox-orange);
+}
+
+/* стили для переключателей выбора */ 
+.flag_input[type="radio"]:checked + span:after, 
+.flag_input[type="radio"]:not(:checked) + span:after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;   
+  left: 4px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--blue);
+}
+
+.flag_input_error[type="radio"]:checked + span:after, 
+.flag_input_error[type="radio"]:not(:checked) + span:after {    
+  background-color: var(--checkbox-orange);
+}
+
+/* скрываем переключатели, когда элемент не выбран */
+.flag_input[type="radio"]:not(:checked) + span:after {
+  opacity: 0;
+}
+
+.flag_input[type="radio"]:checked + span:after {
+  opacity: 1;
+}
+
+/*************** button checkbox **************/
+.button_label {
+  position: relative;
+  display: flex;
+  background:var(--checkbox-label-background);
+  border: 1px solid var(--checkbox-button-border);
+  box-sizing: border-box;
+  border-radius: 2px 0px 0px 2px;
+  flex-direction: column;
+}
+
+.wrap:first-child .button_span {
+  border-radius: 2px 0 0 2px;
+}
+
+.wrap:last-child .button_span {
+  border-radius: 0 2px 2px 0;
+}
+
+.wrap:first-child:last-child .button_span {
+  border-radius: 2px;
+}
+
+.wrap:first-child ~ .wrap .button_span {
+  margin-left: -1px;
+}
+
+.button_input:checked + .button_span {
+  z-index: 1;
+}
+
+.button_span {
+  position: relative;
+  display: flex;  
+  justify-content: center;  
+  width: 104px;
+  height: 100%; 
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;  
+  color:var(--button-checkbox-gray);  
+  box-sizing: border-box;
+  background: var(--button-checkbox-background-gray);
+  border: 1px solid var(--button-checkbox-border-gray);  
+}
+
+/* текст кнопки в состоянии disable */
+.button_span_disable {
+  opacity: 0.5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 104px;
+  height: 100%; 
+  line-height: 28px;
+  color: var(--disabled-text); 
+  box-sizing: border-box;
+  background: var(--button-checkbox-background-gray);
+  border: 1px solid var(--button-checkbox-border-gray);  
+}
+
+.button_input {  
+  position: relative;
+  display: flex;
+  cursor: pointer;   
+}
+
+/* прячем стандартный элемент за область видимости */ 
+.button_input[type="radio"]:checked, 
+.button_input[type="radio"]:not(:checked) 
+{
+  position: absolute;
+  opacity: 0; 
+}
+
+.button_input[type="radio"]:checked + span, 
+.button_input[type="radio"]:not(:checked) + span {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  line-height: 28px;
+  cursor: pointer;    
+}
+
+/* голубая кнопка в состоянии checked */
+.wrap .button_input[type="radio"]:checked + .button_span { 
+  color:var(--button-checkbox-blue);
+  background: var(--button-checkbox-background-blue);
+  border: 1px solid var(--button-checkbox-border-blue);
+  border-top: 2px solid var(--button-checkbox-border-top-blue);
+  line-height: 26px;
+}
+
+/* оранжевая кнопка в статусе isError */
+.wrap .button_input_error[type="radio"] + .button_span  {
+  color:var(--checkbox-orange);        
+  border: 1px solid var(--button-checkbox-border-gray); 
+  background: var(--button-checkbox-background-gray);
+}
+
+/* оранжевая кнопка в состоянии checked и статусе is Error */
+.wrap .button_input_error[type="radio"]:checked + .button_span { 
+  color:var(--checkbox-orange);
+  background: var(--button-checkbox-background-orange);
+  border: 1px solid var(--checkbox-orange);
+  border-top: 2px solid var(--checkbox-orange);
+  line-height: 26px;
+}
+
+.button_input[data-focus-visible-added] + span{
+  box-shadow: var(--focus-default-color) 0px 0px 0px 2px inset;
+}

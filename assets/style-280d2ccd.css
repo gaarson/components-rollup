@@ -1,0 +1,63 @@
+/* src/Loader/style.css */
+.mcf3ddcf91_loader svg {
+  -webkit-animation: mcf3ddcf91_progress-circular-rotate 1.4s linear infinite;
+  animation: mcf3ddcf91_progress-circular-rotate 1.4s linear infinite;
+  transform-origin: center center;
+  transition: all .2s ease-in-out;
+}
+
+.mcf3ddcf91_loader__overlay {
+  fill: transparent;
+  -webkit-animation: mcf3ddcf91_progress-circular-dash 1.4s ease-in-out infinite;
+  animation: mcf3ddcf91_progress-circular-dash 1.4s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke-dasharray: 80,200;
+  stroke-dashoffset: 0px;
+  transition: all .6s ease-in-out
+}
+
+@-webkit-keyframes mcf3ddcf91_progress-circular-dash {
+  0% {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0px
+  }
+
+  50% {
+      stroke-dasharray: 100,200;
+      stroke-dashoffset: -15px
+  }
+
+  to {
+      stroke-dasharray: 100,200;
+      stroke-dashoffset: -125px
+  }
+}
+
+@keyframes mcf3ddcf91_progress-circular-dash {
+  0% {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0px
+  }
+
+  50% {
+      stroke-dasharray: 100,200;
+      stroke-dashoffset: -15px
+  }
+
+  to {
+      stroke-dasharray: 100,200;
+      stroke-dashoffset: -125px
+  }
+}
+
+@-webkit-keyframes mcf3ddcf91_progress-circular-rotate {
+  to {
+      transform: rotate(1turn)
+  }
+}
+
+@keyframes mcf3ddcf91_progress-circular-rotate {
+  to {
+      transform: rotate(1turn)
+  }
+}

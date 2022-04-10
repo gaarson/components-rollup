@@ -1,0 +1,19 @@
+.icon {
+    fill: var(--input-icon-color);
+    min-height: 16px;
+    min-width: 16px;
+}
+.icon-wrapper {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+}
+.clickable {
+    cursor: pointer;
+}
+.clickable:focus {
+   background-color: var(--btn-modal-background-filled);
+}

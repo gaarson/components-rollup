@@ -1,0 +1,295 @@
+/*src/Checkbox/style.css*/
+/*************** checkbox **************/
+.mcf0b552a7_label {
+  position: relative;
+  display: flex;
+  align-items: center;  
+  height: 28px;
+  line-height: 28px; 
+  text-align: center;
+  vertical-align: middle; 
+}
+
+.mcf0b552a7_span {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/*************** flag checkbox **************/
+
+.mcf0b552a7_flag_span {
+  position: relative;
+  display: flex;
+  width: 130px;
+  height: 22px; 
+  line-height: 22px;
+  left: 0px;       
+  color:var(--text); 
+  margin-left: -2px;
+}
+
+.mcf0b552a7_flag_span_disable {
+  position: relative;
+  display: flex;
+  opacity: 0.5;
+  color: var(--disabled-text);  
+}
+
+.mcf0b552a7_flag_span_italic {
+  font-style: italic;
+}
+
+.mcf0b552a7_flag_span:hover {
+  background: rgba(49, 116, 230, 0.1);
+  border-radius: 2px;
+}
+
+.mcf0b552a7_flag_input {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background-color: var(--white);  
+  
+}
+
+.mcf0b552a7_flag_input:hover {
+  background: var(--checkbox-label-background);
+  border-radius: 2px;
+}
+
+.mcf0b552a7_flag_span_no_background {
+  background: none;
+}
+
+
+/* убираем фон при flag_input_gray и hover */
+/* убираем фон при no_background и hover */
+.mcf0b552a7_flag_input_gray:hover + .mcf0b552a7_flag_span:hover,
+.mcf0b552a7_flag_input_no_background:hover + .mcf0b552a7_flag_span_no_background:hover
+ {
+  background: none;
+}
+
+
+/* прячем стандартный элемент за область видимости */
+.mcf0b552a7_flag_input[type="checkbox"]:checked, 
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked), 
+.mcf0b552a7_flag_input[type="checkbox"]:checked, 
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked) 
+{
+  position: absolute;
+  opacity: 0;    
+}
+
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span, 
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked) + span {
+  position: relative;
+  display: flex;
+  flex-direction: row;  
+  padding-left: 26px;
+  line-height: 22px;
+  cursor: pointer;    
+}
+
+/* стилизованные контейнеры для переключателей */
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span:before, 
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked) + span:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  display: flex;
+  flex-direction: row;     
+  width: 16px;
+  height: 16px;    
+  border: 1px solid var(--checkbox-border-grey);
+  background-color: var(--white);   
+  border-radius: 2px; /* квадратный контейнер */
+  margin-left: 2px;
+}
+
+/* синий border для переключателей при наведении мыши */
+.mcf0b552a7_flag_input[type="checkbox"]:hover + span:before {
+  border: 1px solid var(--blue);
+}
+
+/* синий border для переключателей в состоянии checked */
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span:before {
+  border: 1px solid var(--blue);
+}
+
+/* серый border для переключателей в состоянии checked и disabled */
+.mcf0b552a7_flag_input[type="checkbox"]:checked:disabled + span:before, 
+.mcf0b552a7_flag_input[type="checkbox"]:disabled + span:before {
+  opacity: 0.5;
+  border: 1px solid var(--checkbox-border-grey);  
+}
+
+/* оранжевый border в статусе isError */
+.mcf0b552a7_flag_input_error[type="checkbox"]:checked + span:before, 
+.mcf0b552a7_flag_input_error[type="checkbox"]:not(:checked) + span:before {        
+  border: 1px solid var(--checkbox-orange);    
+}
+
+/* оранжевый border для переключателей в состоянии checked в статусе isError */
+.mcf0b552a7_flag_input_error[type="checkbox"]:checked + span:before {
+  border: 1px solid var(--checkbox-orange);
+}
+
+/* синий фон для checkbox в состоянии checked */
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span:before {       
+  background-color: var(--blue);
+}
+
+/* серый фон для checkbox в состоянии checked */
+.mcf0b552a7_flag_input_gray[type="checkbox"]:checked + span:before {       
+  background-color: var(--checkbox-gray);
+  border: 1px solid var(--checkbox-border-grey);
+}
+
+/* серый фон для checkbox в состоянии checked и disabled */
+.mcf0b552a7_flag_input[type="checkbox"]:checked:disabled + span:before, 
+.mcf0b552a7_flag_input[type="checkbox"]:disabled + span:before{  
+  background-color: var(--checkbox-disabled-grey);
+}
+
+/* белый фон для checkbox в состоянии disabled */
+.mcf0b552a7_flag_input_white[type="checkbox"]:disabled + span:before{  
+  background-color: var(--white);
+}
+
+/* оранжевый фон для checkbox в статусе isError*/
+.mcf0b552a7_flag_input_error[type="checkbox"]:checked + span:before {       
+  background-color: var(--checkbox-orange);
+}
+
+/* стили для переключателей */
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span:after, 
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked) + span:after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;  
+  left: 3px;
+  top: 6px;
+  width: 10px;
+  height: 5px;
+  border-radius: 1px;
+  border-left: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-left: 2px;
+}
+
+/* скрываем переключатели, когда элемент не выбран */
+.mcf0b552a7_flag_input[type="checkbox"]:not(:checked) + span:after {
+  opacity: 0;
+}
+
+.mcf0b552a7_flag_input[type="checkbox"]:checked + span:after {
+  opacity: 1;
+}
+
+/*************** button checkbox **************/
+
+.mcf0b552a7_button_label {
+  position: relative;
+  display: flex;
+  background:var(--checkbox-label-background);
+  border: 1px solid var(--checkbox-button-border);
+  box-sizing: border-box;
+  border-radius: 2px 0px 0px 2px;
+  flex-direction: column;
+}
+
+.mcf0b552a7_button_span {
+  position: relative;
+  display: flex;  
+  justify-content: center;  
+  width: 104px;
+  height: 100%; 
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  color:var(--button-checkbox-gray);  
+  box-sizing: border-box;
+  border-radius: 0px 2px 2px 0px; 
+  background: var(--button-checkbox-background-gray);
+  border: 1px solid var(--button-checkbox-border-gray);  
+}
+
+/* текст кнопки в состоянии disable */
+.mcf0b552a7_button_span_disable {
+  opacity: 0.5;
+  position: relative;
+  display: flex;  
+  justify-content: center;
+  width: 104px;
+  height: 100%; 
+  line-height: 28px;
+  color: var(--disabled-text); 
+  box-sizing: border-box;
+  border-radius: 0px 2px 2px 0px; 
+  background: var(--button-checkbox-background-gray);
+  border: 1px solid var(--button-checkbox-border-gray);  
+}
+
+.mcf0b552a7_button_input {  
+  position: relative;
+  display: flex;
+  cursor: pointer;   
+}
+
+/* прячем стандартный элемент за область видимости */ 
+.mcf0b552a7_button_input[type="checkbox"]:checked, 
+.mcf0b552a7_button_input[type="checkbox"]:not(:checked) 
+{
+  position: absolute;
+  opacity: 0; 
+}
+
+.mcf0b552a7_button_input[type="checkbox"]:checked + span, 
+.mcf0b552a7_button_input[type="checkbox"]:not(:checked) + span {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;    
+  line-height: 28px;
+  cursor: pointer;    
+}
+
+/* голубая кнопка в состоянии checked */
+label .mcf0b552a7_button_input[type="checkbox"]:checked + .mcf0b552a7_button_span { 
+  color:var(--button-checkbox-blue);
+  background: var(--button-checkbox-background-blue);
+  border: 1px solid var(--button-checkbox-border-blue);
+  border-top: 2px solid var(--button-checkbox-border-top-blue);
+}
+
+/* оранжевая кнопка в статусе isError */
+label .mcf0b552a7_button_input_error[type="checkbox"] + .mcf0b552a7_button_span  {
+  color:var(--checkbox-orange);        
+  border: 1px solid var(--button-checkbox-border-gray); 
+  background: var(--button-checkbox-background-gray);
+}
+
+/* оранжевая кнопка в состоянии checked и статусе is Error */
+label .mcf0b552a7_button_input_error[type="checkbox"]:checked + .mcf0b552a7_button_span { 
+  color:var(--checkbox-orange);
+  background: var(--button-checkbox-background-orange);
+  border: 1px solid var(--checkbox-orange);
+  border-top: 2px solid var(--checkbox-orange);
+  
+}
